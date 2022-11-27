@@ -1,0 +1,18 @@
+{% extends 'products/base.html' %}
+
+{% block title %}
+    Animals list
+{% endblock %}
+
+{% block body %}
+    <h1>Hello Offers!</h1>
+    <ul class="list-group">
+        {% for offer in offers %}
+            <li class="list-group-item">
+                [{{ offer.product.category }}]
+                <a href="{% url 'offers:details' offer.pk %}">{{ offer.product.name }} - {{ offer.color }}</a>
+                <strong>{{ offer.price }} ₽</strong>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'products/base.html' %}
+
+{% block title %}
+  {{ offer.name }} details
+{% endblock %}
+
+{% block body %}
+  <h1>Offer <strong>{{ offer.product.name }}</strong> ({{ offer.color }})</h1>
+  <div>
+    <p>Price: {{ offer.price }}</p>
+    <p>Category: {{ offer.product.category }}</p>
+    <p>Description: {{ offer.product.description }}</p>
+  </div>
+  <div class="my-2">
+    <a href="{% url 'offers:index' %}">Back to offers list</a>
+  </div>
+{% endblock %}

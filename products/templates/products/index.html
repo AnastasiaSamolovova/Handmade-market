@@ -1,0 +1,17 @@
+{% extends 'products/base.html' %}
+
+{% block title %}
+  Animals list
+{% endblock %}
+
+{% block body %}
+  <h1>Hello Products!</h1>
+  <ul class="list-group">
+    {% for product in products %}
+      <li class="list-group-item">
+        <a href="{% url 'products:details' product.pk %}"
+        >{{ product.name }} [{{ product.category }}]</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
